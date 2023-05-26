@@ -8,24 +8,24 @@ def login():
         messagebox.showerror('Error','Blank fields are not accepted')
     elif usernamefield.get()=='Abhinav' and passwordfield.get()=='3601':
         messagebox.showinfo('Authorized','Welcome')
-
+        window.destroy()
+        import home                      #redirects to home on sucess
+        
+    else:
+        messagebox.showerror('Error','Unathorized entry pls enter valid credentials')
 
 #Screen resolution
 window.geometry('1280x700')
 window.resizable(False,False)             #Remove the resize button
-
-
+window.title('LOGIN | AN stock managemnt')
 #Background image
 bg=ImageTk.PhotoImage(file='bg.jpg') 
 bglabel=Label(window,image=bg)            #image label
 bglabel.place(x=0,y=0)                    #image location
-
 #Frame login 
 img=ImageTk.PhotoImage(file='back.jpg')
 Login=Frame(window)
 Login.place(x=900,y=150)
-
-
 
 Logo=ImageTk.PhotoImage(file='user.jpg')
 Logolabel=Label(Login,image=Logo)
@@ -46,4 +46,5 @@ loginbutton=Button(Login,text='LOGIN',font=('mono space',20),pady=10,bg='cornflo
 loginbutton.grid(row=3,column=1,pady=10)
 
 window.mainloop()
+
 
